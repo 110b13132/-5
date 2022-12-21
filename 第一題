@@ -1,0 +1,29 @@
+import java.util.Scanner;
+import java.lang.String;
+public class t6 {
+    public static void main(String[] args) {
+    	System.out.println("密碼輸入測試");
+    	System.out.println("請輸入密碼:1234");
+    	System.out.print("請再輸入一次密碼:");
+    	int count = 1;
+        String password = "1234";     
+        Scanner scanner = new Scanner(System.in);
+        
+        while(scanner.hasNext()) {            //循环输入密码
+        	String str = scanner.next();
+        	
+            if(0 == password.compareTo(str)){    //通过返回值是否为0判断密码是否相等
+                System.out.println("密碼正確");
+                break;                         //密码相等跳出循环
+            }else if(count < 3){
+                System.out.println("與第一次輸入的密碼不同!");
+                count++;     //密码输入次数加一
+            }else{
+                break;      //密码输入超过3次跳出循环
+                
+            }
+            System.out.print("請再輸入一次密碼:");
+        }
+        System.out.println("與第一次輸入的密碼不同!");
+    }
+}
